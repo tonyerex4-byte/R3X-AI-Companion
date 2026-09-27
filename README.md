@@ -1,14 +1,14 @@
 # R3X AI Companion
 
-R3X AI Companion is the restored R3X-branded local chatbot, configured for OpenAI only.
+R3X AI Companion is the restored R3X-branded local chatbot, configured for OpenRouter.
 
 ## Included configuration
 
 - R3X AI Companion branding
 - R3X logo treatment throughout the interface
-- OpenAI server-side integration
+- OpenRouter server-side integration
 - `.env.example` configuration
-- Configurable OpenAI model
+- Configurable OpenRouter model
 - Configurable R3X system prompt
 - Configurable port
 - Runtime `/api/config` status endpoint
@@ -49,8 +49,8 @@ cp .env.example .env
 Edit `.env`:
 
 ```env
-OPENAI_API_KEY=your_actual_openai_api_key
-OPENAI_MODEL=gpt-5-mini
+OPENROUTER_API_KEY=your_actual_openrouter_api_key
+OPENROUTER_MODEL=openai/gpt-5-mini
 PORT=3000
 R3X_NAME=R3X AI Companion
 R3X_SYSTEM_PROMPT=You are R3X, a helpful, friendly AI companion. Give clear and accurate answers.
@@ -96,6 +96,6 @@ R3X-AI-Companion/
 
 ## Important
 
-This version intentionally uses OpenAI only. Google Gemini is not included.
+This version uses OpenRouter as the provider layer, with the OpenAI SDK configured to talk to OpenRouter's OpenAI-compatible API.
 
 For public deployment, add authentication, rate limiting, usage controls, secure logging, and other production protections before exposing the API server to the internet.

@@ -43,8 +43,9 @@ async function loadConfig() {
   try {
     const response = await fetch("/api/config");
     const data = await response.json();
-    modelLabel.textContent = data.configured ? `Connected • ${data.model}` : "API key not configured";
-    status.innerHTML = `<span class="dot"></span>${data.configured ? "OpenAI connected" : "Add your API key to .env"}`;
+    const providerName = data.provider === "openai" ? "OpenAI" : "OpenRouter";
+    modelLabel.textContent = data.configured ? `Connected • ${providerName} • ${data.model}` : "API key not configured";
+    status.innerHTML = `<span class="dot"></span>${data.configured ? `${providerName} connected` : "Add your API key to .env"}`;
   } catch {
     modelLabel.textContent = "Server unavailable";
     status.innerHTML = `<span class="dot"></span>Start the Node server`;
