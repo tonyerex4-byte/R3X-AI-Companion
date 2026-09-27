@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090a0f">
+  <title>R3X AI Companion</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo" aria-label="R3X logo">R3X</div>
+        <div>
+          <h1>R3X</h1>
+          <span>AI Companion</span>
+        </div>
+      </div>
+
+      <button id="newChat" class="new-chat">＋ New chat</button>
+
+      <nav class="side-links">
+        <button id="clearChat">Clear conversation</button>
+      </nav>
+
+      <div class="side-note">
+        <strong>R3X Configuration</strong>
+        <p>OpenAI is connected through the secure server-side configuration.</p>
+      </div>
+
+      <div class="status" id="status">
+        <span class="dot"></span>
+        Checking…
+      </div>
+    </aside>
+
+    <section class="chat">
+      <header class="chat-header">
+        <div>
+          <h2>R3X AI Companion</h2>
+          <p id="modelLabel">Connecting…</p>
+        </div>
+        <div class="brand-mark">R3X</div>
+      </header>
+
+      <div id="messages" class="messages">
+        <div class="welcome">
+          <div class="welcome-logo">R3X</div>
+          <h3>Welcome to R3X</h3>
+          <p>Your AI companion is ready.</p>
+        </div>
+      </div>
+
+      <form id="chatForm" class="composer">
+        <textarea id="messageInput" rows="1" placeholder="Message R3X…" autocomplete="off"></textarea>
+        <button id="sendButton" type="submit" aria-label="Send message">➤</button>
+      </form>
+      <p class="disclaimer">R3X can make mistakes. Check important information.</p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
